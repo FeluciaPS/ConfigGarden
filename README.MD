@@ -64,6 +64,6 @@ Not all WINE forks and Linux distros have been tested, so the path may vary ther
 Example: `Documents/ModConfig/Tiny Terry's Turbo Trip/FeluciaPS/My Awesome Mod/`
 
 ## Credits
-Created by [FeluciaPS](https://github.com/FeluciaPS). Mod icon by Frutiflow. 
+Created by [FeluciaPS](https://github.com/FeluciaPS). Thunderstore mod icon by Frutiflow. 
 
 Special thanks to Frutiflow for testing on WINE.
