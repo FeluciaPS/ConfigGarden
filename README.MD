@@ -17,7 +17,8 @@ class ModInfo : IModInfo
     public string GAME_NAME => "Tiny Terry's Turbo Trip";
     public string AUTHOR_NAME => "FeluciaPS";
     public string MOD_NAME => "My Awesome Mod";
-}```
+}
+```
 
 You can then create a ConfigHelper anywhere in your plugin.
 
