@@ -34,7 +34,7 @@ namespace ConfigGarden
                 return winroot;
             }
 
-            string path = xdg ?? Path.Join(home, ".config");
+            string path = xdg ?? Path.Combine(home, ".config");
             return "Z:" + path.Replace('/', '\\');
         }
 
@@ -42,7 +42,7 @@ namespace ConfigGarden
 
         private string DefaultDirectory(string root, IModInfo info)
         {
-            return Path.Join(root, "ModConfig", info.GAME_NAME, info.AUTHOR_NAME, info.MOD_NAME);
+            return Path.Combine(root, "ModConfig", info.GAME_NAME, info.AUTHOR_NAME, info.MOD_NAME);
         }
 
         public ConfigHelper(
@@ -61,8 +61,8 @@ namespace ConfigGarden
             Directory.CreateDirectory(dir);
             string name = Path.GetFileName(fileName);
 
-            if (!name.Contains('.')) name += ".json";
-            FilePath = Path.Join(dir, name);
+            if (!name.Contains(".")) name += ".json";
+            FilePath = Path.Combine(dir, name);
         }
 
         private T configData;

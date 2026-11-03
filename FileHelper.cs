@@ -2,7 +2,7 @@
 using System;
 using System.IO;
 using System.Text;
-using System.Text.Json;
+using Newtonsoft.Json;
 
 namespace ConfigGarden
 {
@@ -55,11 +55,7 @@ namespace ConfigGarden
 
         internal void Save<T>(string path, T data)
         {
-            var options = new JsonSerializerOptions
-            {
-                WriteIndented = true
-            };
-            string jsonData = JsonSerializer.Serialize(data, options);
+            string jsonData = JsonConvert.SerializeObject(data, Formatting.Indented);
             Write(path, jsonData);
         }
 
@@ -72,7 +68,9 @@ namespace ConfigGarden
                 return defaultValue;
             }
 
-            return JsonSerializer.Deserialize<T>(File.ReadAllText(path));
+            string data = File.ReadAllText(path);
+            Logger.Warn(data);
+            return JsonConvert.DeserializeObject<T>(data);
         }
     }
 }
