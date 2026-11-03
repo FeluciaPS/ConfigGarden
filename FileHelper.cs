@@ -17,7 +17,7 @@ namespace ConfigGarden
 
         private bool Write(string path, string data)
         {
-            Logger.Info($"Writing config data to {path}");
+            Logger.Info($"Writing config data to {WineHelper.GetDisplayPath(path)}");
 
             string tmp = path + ".tmp";
             string bak = path + ".bak";
@@ -65,7 +65,7 @@ namespace ConfigGarden
 
         internal T Load<T>(string path, T defaultValue = default)
         {
-            Logger.Info($"Loading config data from {path}");
+            Logger.Info($"Loading config data from {WineHelper.GetDisplayPath(path)}");
             if (!File.Exists(path))
             {
                 Save(path, defaultValue);

@@ -33,5 +33,24 @@ namespace ConfigGarden
 
             return env;
         }
+
+        public static string GetDisplayPath(string path)
+        {
+            if (!IsWine) return path;
+            string home = GetEnvironmentVariable("HOME");
+            
+            string homepath = "Z:" + home.Replace('/', '\\');
+
+            if (path.StartsWith(homepath))
+            {
+                path = path.Replace(homepath, "~");
+            }
+            else if (path.StartsWith("Z:"))
+            {
+                path = path.Replace("Z:", "");
+            }
+
+            return path;
+        }
     }
 }
